@@ -70,10 +70,10 @@ These commands display historical measurements; they do not reproduce them. Actu
 
 Run `python scripts/verify_release.py` to verify the file manifest. Distribute only files in `RELEASE_FILES.json`; do not include local environments, outputs or build products.
 
-This is a **public-release candidate**, not a completed historical replication or a GitHub upload. [Validation](docs/VALIDATION.md), [source provenance](docs/SOURCE_PROVENANCE.json) and [licensing](docs/LICENSING.md) define its scope.
+The code and archived results are [publicly available on GitHub](https://github.com/OneDecisionC/tactile-operator-audit). This release is not a completed historical replication. [Validation](docs/VALIDATION.md), [source provenance](docs/SOURCE_PROVENANCE.json) and [licensing](docs/LICENSING.md) explain what has been checked and what remains outside its scope.
 
 ## Author, citation and license
 
 Author: **Zhiqi Cai**. This software is released under the [MIT License](LICENSE), Copyright (c) 2026 Zhiqi Cai. Dataset and dependency licenses remain separate.
 
-Please cite **Zhiqi Cai. Tactile Operator Audit, version 0.2.0.** Machine-readable software citation metadata is in [CITATION.cff](CITATION.cff). Add the exact public repository URL and commit/tag to citations once published; no repository URL or DOI has been assigned here.
+Please cite **Zhiqi Cai. Tactile Operator Audit, version 0.2.0.** Machine-readable software citation metadata is in [CITATION.cff](CITATION.cff). Include the [repository URL](https://github.com/OneDecisionC/tactile-operator-audit) and the exact commit or release tag you used. No software DOI has been assigned here.
