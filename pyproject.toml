@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tactile-operator-audit"
+version = "0.2.0"
+description = "Research software for occupancy-matched auditing of tactile temporal perturbations"
+readme = "README.md"
+authors = [{name = "Zhiqi Cai"}]
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy==1.26.4",
+    "scipy==1.13.1",
+]
+keywords = ["tactile", "neuromorphic", "robustness", "reproducibility", "spiking-neural-networks"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<9"]
+figures = ["matplotlib>=3.8,<4"]
+training = [
+    "torch==2.11.0",
+    "snntorch==0.9.4",
+    "h5py>=3.8,<4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [
+    "icassp_jitter_operators",
+    "injective_pbj_operator",
+    "run_braille_ablation_baselines",
+    "run_stemnist_robustness",
+    "run_icassp_jitter_screening",
+    "icassp_stage_b_runner",
+    "icassp_stage_b_operator_cache",
+    "survivor_rule_operator",
+    "retention_matched_operator",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["tactile_audit*"]

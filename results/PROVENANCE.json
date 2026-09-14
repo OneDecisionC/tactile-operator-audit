@@ -1,0 +1,112 @@
+{
+  "release_status": "author_inspection_candidate",
+  "paper_title": "Occupancy-Matched Auditing of Temporal Jitter in Binary-Binned Tactile Event Representations",
+  "paper_revision": "polished_revision_20260908_v3",
+  "prepared_on": "2026-09-09",
+  "new_training": false,
+  "new_inference": false,
+  "new_bootstrap": false,
+  "new_validation": false,
+  "file_sources": [
+    {
+      "output": "main_tables/table1.csv",
+      "source_id": "paper_EN.md, Table 1, revision polished_revision_20260908_v3",
+      "method": "manual transcription of already published-rounded draft values",
+      "precision": "two decimal places; not raw metrics",
+      "units": "accuracy and SD in percent; paired differences and CI in percentage points",
+      "estimand": "sample micro; STEMNIST CIs use participant-cluster bootstrap"
+    },
+    {
+      "output": "main_tables/table2.csv",
+      "source_id": "paper_EN.md, Table 2, revision polished_revision_20260908_v3",
+      "method": "manual transcription of already published-rounded draft values",
+      "precision": "two decimal places; not raw metrics",
+      "units": "accuracy and SD in percent; interaction and residual in percentage points",
+      "survivor_rule": "assignment_preserving"
+    },
+    {
+      "output": "main_tables/table3.csv",
+      "source_id": "no_retrain_followup_20260907/integration/source_snapshot.json#transfer",
+      "method": "select existing per-arm means and sample SDs; no numerical re-estimation",
+      "precision": "stored source floating-point values",
+      "units": "percent"
+    },
+    {
+      "output": "transfer/by_seed.csv",
+      "source_id": "no_retrain_followup_20260907/integration/source_snapshot.json#transfer",
+      "method": "flatten existing seed/value entries only",
+      "units": "percent"
+    },
+    {
+      "output": "bootstrap/paired_ci.csv",
+      "source_id": "no_retrain_followup_20260907/integration/source_snapshot.json#ci",
+      "original_source_id": "no_retrain_followup_20260907/paired_ci/paired_ci_all.csv",
+      "method": "column-whitelisted extraction of archived confidence-interval rows",
+      "units": "accuracy in percent; differences and CIs in percentage points"
+    },
+    {
+      "output": "binwidth/summary.csv",
+      "source_id": "no_retrain_followup_20260907/integration/source_snapshot.json#binwidth",
+      "original_source_id": "no_retrain_followup_20260907/binwidth/summary.csv",
+      "method": "column-whitelisted extraction of archived aggregate rows",
+      "units": "named pct columns in percent; displacement units explicitly named"
+    },
+    {
+      "output": "bootstrap/condition_accuracy_by_seed_pooled.csv",
+      "source_id": "no_retrain_followup_20260907/paired_ci/condition_accuracy_by_seed.csv",
+      "method": "retain severity_ms=pooled rows only; no averaging",
+      "units": "percent"
+    },
+    {
+      "output": "bootstrap/paired_differences_by_seed_pooled.csv",
+      "source_id": "no_retrain_followup_20260907/paired_ci/paired_differences_by_seed.csv",
+      "method": "retain severity_ms=pooled rows only; no differencing",
+      "units": "percentage points"
+    },
+    {
+      "output": "survivor/factorial_sample_micro.csv",
+      "source_id": "survivor_rule_all_probe_extension_v1/results/78ae45ab29ee1cf505147a0f/summary/all_five_rule_factorial_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop, interaction, residual and range_pp columns are percentage points"
+    },
+    {
+      "output": "survivor/ranges_sample_micro.csv",
+      "source_id": "survivor_rule_all_probe_extension_v1/results/78ae45ab29ee1cf505147a0f/summary/all_five_rule_ranges_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop, interaction, residual and range_pp columns are percentage points"
+    },
+    {
+      "output": "survivor/factorial_participant_macro.csv",
+      "source_id": "survivor_rule_all_probe_extension_v1/results/78ae45ab29ee1cf505147a0f/summary/stem_participant_macro_rule_factorial_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop, interaction, residual and range_pp columns are percentage points"
+    },
+    {
+      "output": "survivor/ranges_participant_macro.csv",
+      "source_id": "survivor_rule_all_probe_extension_v1/results/78ae45ab29ee1cf505147a0f/summary/stem_participant_macro_rule_ranges_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop, interaction, residual and range_pp columns are percentage points"
+    },
+    {
+      "output": "retention/sample_micro.csv",
+      "source_id": "retention_matched_loss_v3/results/304147266d436e2a280d9d09/summary/all_five_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop_pp columns are percentage points"
+    },
+    {
+      "output": "retention/participant_macro.csv",
+      "source_id": "retention_matched_loss_v3/results/304147266d436e2a280d9d09/summary/stemnist_participant_macro_3seed.csv",
+      "method": "verbatim aggregate CSV content with newline normalization",
+      "units": "accuracy columns are fractions; drop_pp columns are percentage points"
+    }
+  ],
+  "excluded_snapshot_fields": [
+    "original_tex",
+    "references_bib",
+    "source_paths",
+    "description",
+    "created_for"
+  ],
+  "note": "Source identifiers are historical provenance labels, not links into an unpublished local directory. No new hashes, experimental results, or independent replication claims were generated."
+}
+

@@ -1,0 +1,72 @@
+{
+  "release": "0.2.0",
+  "source_discovery_date": "2026-09-14",
+  "scope": "local historical code; identifiers are relative source labels, not downloadable dependencies",
+  "entries": [
+    {
+      "public_file": "src/survivor_rule_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/survivor_rule_sensitivity_v4/survivor_rule_operator.py",
+      "historical_source_sha256": "02535151de13f1d6762f32b63d656617005c4cbb64392cf6a2eb834c1e833e67",
+      "adaptation": "verbatim kernel",
+      "identical_bytes": true
+    },
+    {
+      "public_file": "src/retention_matched_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/retention_matched_loss_v3/retention_matched_operator.py",
+      "historical_source_sha256": "84aa705f437fb3d502585385bbd5231ff77a9a912d7eb257cc053dff992dd9d1",
+      "adaptation": "verbatim kernel",
+      "identical_bytes": true
+    },
+    {
+      "public_file": "src/injective_pbj_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260819ICASSP/injective_pbj_v1/injective_pbj_operator.py",
+      "historical_source_sha256": "fad9190b4e8cbff36a8328d1e34f8dcf0333d2be8ffa51bb4140c7ca3497bc29",
+      "adaptation": "preserved kernel from v0.1.0",
+      "identical_bytes": true
+    },
+    {
+      "public_file": "tests/test_survivor_rule_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/survivor_rule_sensitivity_v4/test_survivor_rule_operator.py",
+      "historical_source_sha256": "cb69418b1db96a75c7c6db6db23b315cbc2df7659a123e2131eefcf3109f4139",
+      "adaptation": "removed private-project import path setup",
+      "identical_bytes": false
+    },
+    {
+      "public_file": "tests/test_retention_matched_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/retention_matched_loss_v3/test_retention_matched_operator.py",
+      "historical_source_sha256": "b8fe49baa5dc483585dba959a1733c21f3874248835800fa51cdbec004ade21e",
+      "adaptation": "verbatim tests",
+      "identical_bytes": true
+    },
+    {
+      "public_file": "tests/test_injective_pbj_operator.py",
+      "historical_source_id": "\u5efa\u8bae20260819ICASSP/injective_pbj_v1/test_injective_pbj_operator.py",
+      "historical_source_sha256": "eefa73fa3e425265158f8cddb0d175f70e9c92996b7f98cc0eb766b4f61b00b1",
+      "adaptation": "removed private-project import path setup",
+      "identical_bytes": false
+    },
+    {
+      "public_file": "src/tactile_audit/workflow.py",
+      "historical_source_id": "\u5efa\u8bae20260819ICASSP/matched_augmentation_v1/run_matched_augmentation_v1.py",
+      "historical_source_sha256": "3b498fa9c7072031828bc97c2f41646c176ce7e006957a73e6c671609a20e901",
+      "adaptation": "adapted MatchedAugTrainingDataset and paired base-protocol RNG; no historical registry or global monkey patch",
+      "identical_bytes": false
+    },
+    {
+      "public_file": "src/tactile_audit/analysis.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/no_retrain_followup_20260907/paired_ci/run_paired_ci.py",
+      "historical_source_sha256": "30c4a230b27e7f8d0956f266e8068f2e3cc2c04853c1d7a76c2880cfbb02b655",
+      "adaptation": "adapted shared multinomial bootstrap; replaced private artifact loaders with validated portable OOF input",
+      "identical_bytes": false
+    },
+    {
+      "public_file": "src/tactile_audit/binwidth.py",
+      "historical_source_id": "\u5efa\u8bae20260826ICASSP/no_retrain_followup_20260907/binwidth/run_binwidth_audit.py",
+      "historical_source_sha256": "00a6c2878aedc0a11acacccaa29f16ef10c6d6996dddb76270477c474975c6d8",
+      "adaptation": "preserved tick/grid/RNG/count-pooling formulas; uses portable bundles instead of private ZIP/cache inventory",
+      "identical_bytes": false
+    }
+  ],
+  "baseline": "v0.1.0 public candidate commit 8a7f32e; curated results unchanged",
+  "limitations": "Public adapters do not replay private historical checkpoints. The release MIT license was explicitly confirmed by sole author Zhiqi Cai, not inferred from source availability."
+}

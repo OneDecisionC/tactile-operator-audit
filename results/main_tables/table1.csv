@@ -1,0 +1,7 @@
+dataset,probe_id,clean_mean_pct,clean_sd_pct,pbj_mean_pct,pbj_sd_pct,cfm_mean_pct,cfm_sd_pct,difference_mean_pp,difference_sd_pp,ci95_low_pp,ci95_high_pp
+braille,braille_ratesnn_h192_l3,70.75,0.56,51.71,0.68,58.05,1.09,-6.33,0.49,-6.71,-5.95
+braille,braille_tcn_small_h64_b2_k3,79.99,0.25,44.87,0.09,58.81,0.36,-13.94,0.42,-14.38,-13.50
+braille,braille_conv1d_h83_l2_k5,75.33,0.47,40.17,1.29,52.07,1.02,-11.90,0.31,-12.30,-11.48
+stemnist,stemnist_paper_scnn_clean,86.94,0.41,85.91,0.30,86.42,0.29,-0.51,0.01,-0.63,-0.38
+stemnist,stemnist_tcn_large_clean,92.19,0.19,86.49,0.50,88.68,0.35,-2.19,0.17,-2.53,-1.86
+

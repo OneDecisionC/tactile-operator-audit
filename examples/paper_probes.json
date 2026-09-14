@@ -1,0 +1,181 @@
+{
+  "schema": "tactile_operator_audit_portable_v1",
+  "run_kind": "portable_new_run",
+  "output_root": "outputs/portable",
+  "device": "auto",
+  "data": {
+    "braille_root": "data",
+    "stemnist_data_root": "data/STEMNIST Dataset",
+    "stemnist_cache": "data/cache/stemnist_icassp"
+  },
+  "split_seeds": [
+    42,
+    123,
+    202
+  ],
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "training_profiles": {
+    "braille_stage_b": {
+      "optimizer": "AdamW",
+      "epochs": 80,
+      "batch_size": 128,
+      "learning_rate": 0.002,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 1,
+      "rng_protocol_id": "icassp_stage_b_formal_v1",
+      "checkpoint_rule": "final_epoch_only"
+    },
+    "stemnist_stage_a": {
+      "optimizer": "Adam",
+      "epochs": 50,
+      "batch_size": 32,
+      "learning_rate": 0.002,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": null,
+      "rng_protocol_id": "binary80_groupcv_v1",
+      "checkpoint_rule": "final_epoch_only"
+    }
+  },
+  "augmentation": {
+    "augmentation_probability": 0.75,
+    "severities_ms": [
+      25,
+      50,
+      75
+    ]
+  },
+  "evaluation": {
+    "conditions": [
+      "clean",
+      "prebin",
+      "pbj",
+      "cf",
+      "matched",
+      "cf_matched",
+      "ipbj_movement",
+      "pbj_identity_loss",
+      "ipbj_plus_identity_loss",
+      "fixed_index_loss",
+      "fixed_index_combined",
+      "minimum_proposed_displacement_loss",
+      "minimum_proposed_displacement_combined",
+      "fixed_random_priority_loss",
+      "fixed_random_priority_combined",
+      "retention_95",
+      "retention_90",
+      "retention_85"
+    ],
+    "severities_ms": [
+      25,
+      50,
+      75
+    ],
+    "realizations": 3,
+    "batch_size_by_dataset": {
+      "braille": 128,
+      "stemnist": 32
+    }
+  },
+  "models": [
+    {
+      "probe_id": "braille_ratesnn_h192_l3",
+      "dataset": "braille",
+      "family": "RateSNN",
+      "parameter_count": 47067,
+      "effective_config": {
+        "hidden": 192,
+        "layers": 3,
+        "dropout": 0.2,
+        "beta": 0.8,
+        "threshold_v": 0.5,
+        "readout": "spikes"
+      },
+      "training_profile": "braille_stage_b",
+      "phase": "p0_core",
+      "train_arms": [
+        "clean"
+      ]
+    },
+    {
+      "probe_id": "braille_tcn_small_h64_b2_k3",
+      "dataset": "braille",
+      "family": "TCN",
+      "parameter_count": 45595,
+      "effective_config": {
+        "hidden": 64,
+        "layers": 2,
+        "dropout": 0.3,
+        "kernel_size": 3
+      },
+      "training_profile": "braille_stage_b",
+      "phase": "p0_core",
+      "train_arms": [
+        "clean"
+      ]
+    },
+    {
+      "probe_id": "braille_conv1d_h83_l2_k5",
+      "dataset": "braille",
+      "family": "Conv1D",
+      "parameter_count": 47171,
+      "effective_config": {
+        "hidden": 83,
+        "layers": 2,
+        "dropout": 0.3,
+        "kernel_size": 5
+      },
+      "training_profile": "braille_stage_b",
+      "phase": "p1_dense",
+      "train_arms": [
+        "clean"
+      ]
+    },
+    {
+      "probe_id": "stemnist_paper_scnn",
+      "dataset": "stemnist",
+      "family": "paper_scnn",
+      "parameter_count": 6507,
+      "effective_config": {
+        "beta": 0.9,
+        "threshold_v": 1,
+        "dropout": 0.3,
+        "readout": "spikes"
+      },
+      "training_profile": "stemnist_stage_a",
+      "phase": "p0_core",
+      "train_arms": [
+        "clean"
+      ]
+    },
+    {
+      "probe_id": "stemnist_tcn_large_h128_b3_k3",
+      "dataset": "stemnist",
+      "family": "TCN",
+      "parameter_count": 514851,
+      "effective_config": {
+        "hidden": 128,
+        "layers": 3,
+        "dropout": 0.3,
+        "kernel_size": 3
+      },
+      "training_profile": "stemnist_stage_a",
+      "phase": "p0_core",
+      "train_arms": [
+        "clean"
+      ]
+    }
+  ],
+  "provenance_notes": [
+    "New runs only. No historical checkpoint, dataset or registry is distributed.",
+    "Braille profiles use Stage-B AdamW training. STEMNIST profiles use the separate Stage-A Adam training.",
+    "STEMNIST source config IDs: cfg_2f4811e3ec848ef7 (SCNN), cfg_b7bc07c654cd7667 (large TCN).",
+    "The historical Stage-B six-probe registry contains a different tiny STEMNIST TCN and must not replace the large TCN here.",
+    "Release validation is documented in docs/VALIDATION.md; new training does not certify historical checkpoint replay."
+  ]
+}

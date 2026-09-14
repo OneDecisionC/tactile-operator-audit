@@ -1,0 +1,66 @@
+{
+  "version": "0.2.0",
+  "license": "MIT",
+  "author": "Zhiqi Cai",
+  "checked_on": "2026-09-14",
+  "platform": "Windows x64",
+  "python": "3.11.14",
+  "checks": {
+    "mit_wheel_build_and_bundled_license_metadata": "PASS",
+    "citation_yaml_author_and_license": "PASS",
+    "clean_core_editable_install": "PASS",
+    "isolated_core_wheel_install": "PASS",
+    "pip_check": "PASS",
+    "clean_core_tests": {
+      "passed": 56,
+      "skipped_training_dependencies_absent": 7
+    },
+    "existing_training_environment_cpu_tests": {
+      "passed": 63,
+      "skipped": 0
+    },
+    "source_syntax_files": 27,
+    "five_model_parameter_counts_and_forward": "PASS",
+    "synthetic_checkpoint_train_eval_resume_tamper": "PASS",
+    "synthetic_oof_and_bootstrap": "PASS",
+    "historical_bootstrap_synthetic_golden": "PASS",
+    "archived_table_renderer": "PASS",
+    "archived_binwidth_png_svg_and_visual_review": "PASS",
+    "historical_result_file_count": 15,
+    "historical_result_bytes_unchanged": true,
+    "original_release_git_status_clean": true
+  },
+  "clean_environment_packages": {
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "pytest": "8.4.2",
+    "matplotlib": "3.11.2"
+  },
+  "training_environment": {
+    "torch": "2.11.0+cu128",
+    "snntorch": "0.9.4",
+    "execution": "CPU; existing environment, not a clean GPU installation"
+  },
+  "plan_counts": {
+    "paper": {
+      "training_jobs": 75,
+      "evaluation_units": 10200
+    },
+    "six_arm_transfer": {
+      "training_jobs": 90,
+      "evaluation_units": 4140
+    }
+  },
+  "not_performed": [
+    "full training",
+    "real-data inference",
+    "historical checkpoint replay",
+    "Linux/macOS validation",
+    "clean installation of all GPU dependencies",
+    "GitHub publication"
+  ],
+  "remaining_before_publication": [
+    "public repository URL and exact commit/tag for citation once published"
+  ],
+  "artifact_notes": "Local QA outputs and environments are excluded from the source ZIP. RELEASE_FILES.json and verify_release.py provide the distribution file check."
+}

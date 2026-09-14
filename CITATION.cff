@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using this metadata."
+type: software
+title: "Tactile Operator Audit"
+version: 0.2.0
+authors:
+  - family-names: Cai
+    given-names: Zhiqi
+license: MIT
