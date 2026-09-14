@@ -1,0 +1,57 @@
+# Environments and local credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Python/build/editor artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Only curated aggregate CSVs belong in results/.
+# Do not commit datasets, participant-level predictions, or model binaries.
+data/*
+!data/README.md
+weights/*
+!weights/README.md
+outputs/
+cache/
+caches/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+*.npz
+*.npy
+*.mat
+*.h5
+*.hdf5
+*.zip
+*.tar
+*.gz
+*.log
+*predictions*.csv
+*participant_differences*.csv
+*.local.json
+*.local.yaml
+*.local.yml
+
